@@ -6,7 +6,7 @@ SECRET_KEY = 'django-insecure-2jd!sa@gr(5ord(x_^26-a3obgd-%k1gbmjy!l%wdshr+9*sss
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['vercel.app']
+ALLOWED_HOSTS = ['coupon-api-virid.vercel.app', '127.0.0.1','localhost']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -32,6 +32,7 @@ MIDDLEWARE = [
 
 CORS_ALLOWED_ORIGINS = [
    'http://localhost:3000', # React frontend
+   'https://coupon-api-virid.vercel.app'
 ]
 
 ROOT_URLCONF = 'coupon_api.urls'
