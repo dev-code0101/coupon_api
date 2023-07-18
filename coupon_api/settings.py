@@ -14,9 +14,9 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles',
+    # 'django.contrib.staticfiles',
     'coupons',
-    'corsheaders',
+    # 'corsheaders',
 ]
 
 MIDDLEWARE = [
@@ -27,14 +27,14 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'corsheaders.middleware.CorsMiddleware',
+    # 'corsheaders.middleware.CorsMiddleware',
 ]
 
-CORS_ALLOWED_ORIGINS = [
-   'http://localhost:3000', # React frontend
-   'https://coupon-api-virid.vercel.app',
-   'https://coupon-api-vzb6.vercel.app/'
-]
+# CORS_ALLOWED_ORIGINS = [
+#    'http://localhost:3000', # React frontend
+#    'https://coupon-api-virid.vercel.app',
+#    'https://coupon-api-vzb6.vercel.app/'
+# ]
 
 ROOT_URLCONF = 'coupon_api.urls'
 
@@ -91,7 +91,7 @@ USE_TZ = True
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-import os
-STATIC_URL = 'static/'
-STATICFILES_DIRS = os.path.join(BASE_DIR,'static')
-STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles_build', 'static')
+# import os
+# STATIC_URL = 'static/'
+# STATICFILES_DIRS = os.path.join(BASE_DIR,'static')
+# STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles_build', 'static')
