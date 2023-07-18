@@ -6,7 +6,7 @@ SECRET_KEY = 'django-insecure-2jd!sa@gr(5ord(x_^26-a3obgd-%k1gbmjy!l%wdshr+9*sss
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['coupon-api-virid.vercel.app', '127.0.0.1','localhost']
+ALLOWED_HOSTS = ['.vercel.app', '.now.sh','coupon-api-virid.vercel.app', '127.0.0.1','localhost']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -88,6 +88,9 @@ USE_I18N = True
 
 USE_TZ = True
 
-STATIC_URL = 'static/'
-
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+import os
+STATIC_URL = 'static/'
+STATICFILES_DIRS = os.path.join(BASE_DIR,'static')
+STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles_build', 'static')

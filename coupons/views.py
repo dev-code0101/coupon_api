@@ -40,7 +40,6 @@ class apply_coupon_code(APIView):
             elif coupon.discount_type == 'fixed':
                 price-=discount_value
                 pass
-
             # Proceed with the checkout process
             return Response({"message": "Coupon code applied successfully.",
                              "new_price":price}, status=status.HTTP_200_OK)
