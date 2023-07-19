@@ -56,15 +56,15 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'coupon_api.wsgi.application'
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'djongo',
-        'NAME': 'coupon-db',
-        'CLIENT': {
-            'host': 'mongodb+srv://dev-codeone:b23jeVXAV3rLsPfL@coupon-db.37orrp6.mongodb.net/?retryWrites=true&w=majority',  # Replace with your MongoDB Atlas connection URI
-        }
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'djongo',
+#         'NAME': 'coupon-db',
+#         'CLIENT': {
+#             'host': 'mongodb+srv://dev-codeone:b23jeVXAV3rLsPfL@coupon-db.37orrp6.mongodb.net/?retryWrites=true&w=majority',  # Replace with your MongoDB Atlas connection URI
+#         }
+#     }
+# }
 
 AUTH_PASSWORD_VALIDATORS = [
     {
