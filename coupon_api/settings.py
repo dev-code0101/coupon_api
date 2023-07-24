@@ -8,6 +8,10 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['.vercel.app', '.now.sh', '127.0.0.1','localhost']
 
+RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
+if RENDER_EXTERNAL_HOSTNAME:
+    ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -22,18 +26,19 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'corsheaders.middleware.CorsMiddleware',
+
 ]
 
 CORS_ALLOWED_ORIGINS = [
    'http://localhost:3000', # React frontend
    'https://coupon-api-virid.vercel.app',
-   'https://coupon-api-vzb6.vercel.app/'
+   'https://coupon-api-vzb6.vercel.app'
 ]
 
 ROOT_URLCONF = 'coupon_api.urls'
@@ -61,7 +66,7 @@ DATABASES = {
         'ENGINE': 'djongo',
         'NAME': 'coupon-db',
         'CLIENT': {
-            'host': 'mongodb+srv://dev-codeone:b23jeVXAV3rLsPfL@coupon-db.37orrp6.mongodb.net/?retryWrites=true&w=majority',  # Replace with your MongoDB Atlas connection URI
+            'host': 'mongodb+srv://dev-codeone:b23jeVXAV3rLsPfL@coupon-db.37orrp6.mongodb.net/?retryWrites=true&w=majority',
         }
     }
 }
