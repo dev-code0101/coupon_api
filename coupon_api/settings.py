@@ -66,7 +66,7 @@ DATABASES = {
         'ENGINE': 'djongo',
         'NAME': 'coupon-db',
         'CLIENT': {
-            'host': 'mongodb+srv://dev-codeone:b23jeVXAV3rLsPfL@coupon-db.37orrp6.mongodb.net/?retryWrites=true&w=majority',
+            'host': os.environ.get('DATABASE_URL'),
         }
     }
 }
